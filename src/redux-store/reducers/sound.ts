@@ -1,7 +1,10 @@
 /* node modules */
 import { createSlice } from "@reduxjs/toolkit";
 
-/* reducer */
+/**
+ * the reducer that takes care of the value of the sound slice. this will be controlled based on the
+ * action that we are sending into the reducer
+ **/
 const initialState = true;
 const soundSlice = createSlice({
   name: "sound",
