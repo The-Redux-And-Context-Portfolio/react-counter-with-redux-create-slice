@@ -9,7 +9,10 @@ const defaultState = {
   counter: 0
 };
 
-/* redux store */
+/**
+  * redux store as been created using the configureStore method from redux-toolkit. the 'devTools' options has been kept 
+  * active since this is only a demo-app.
+  */
 function createReduxStore(preloadedState = defaultState) {
   return configureStore({
     reducer: centralReducer(),
@@ -18,7 +21,10 @@ function createReduxStore(preloadedState = defaultState) {
   });
 }
 
-/* exports */
+/**
+  * these are created as reusable types in the application. this is also what was recommended  as a part of the redux 
+  * documentation.
+  */
 export default createReduxStore;
 export type AppStore = ReturnType<typeof createReduxStore>;
 export type RootState = ReturnType<AppStore['getState']>;
