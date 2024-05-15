@@ -8,19 +8,21 @@ import useSoundHook from "../hooks/use-sound-hook";
 
 /* component */
 function Controls(): JSX.Element {
+  /* custom hooks */
   const { handleOnReset } = useOnReset();
   const { soundIcon, handleOnSound } = useSoundHook();
+  
   return (
     <>
       <div className="controls customRow">
-        {/* sound button */}
+        {/* Sound Button */}
         <button type="button" className="btn btn-default"
         data-testid="soundBtn"
         onClick={handleOnSound}>
           <img {...soundIcon} data-testid="soundIcon"/>
         </button>
 
-        {/* reset button */}
+        {/* Reset Button */}
         <button type="button" className="btn btn-default"
         data-testid="resetBtn"
         onClick={handleOnReset}>
