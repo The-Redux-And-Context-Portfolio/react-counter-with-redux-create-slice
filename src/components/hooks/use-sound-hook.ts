@@ -9,13 +9,20 @@ import soundIconWhite from "../../assets/icons/sound-icon-white.svg";
 import muteIconWhite from "../../assets/icons/mute-icon-white.svg";
 import getSound from "../../redux-store/selectors/get-sound";
 
-/* hook */
+/**
+  * @returns - the sound icon variable as well as an event handler that helps to toggle the state of the 
+  * sound icon variable based on user interactions.
+  */
 function useSoundHook() {
+  /* subscribe to the redux store */
   const sound = useAppSelector(getSound);
+  /* create a dispatch function that helps to send instructions to the redux store */
   const reduxDispatch = useAppDispatch();
+  /* sound icon based on the state updates from the redux store */
   const [soundIcon, setSoundIcon] =
     useState<Record<string, any>>(sound ? soundOnIcon : soundOffIcon);
 
+  /* event handler */
   function handleOnSound() {
     if (sound) {
       reduxDispatch(soundOff());
